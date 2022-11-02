@@ -2,3 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer components {
+    /*Jobs.tsx*/
+    .wrap {
+        @apply flex justify-center items-center flex-col bg-[#F5F5F5];
+    }
+
+    .jobsContainer {
+        @apply container mt-7 w-[1400px] flex flex-col gap-y-2 font-sans;
+    }
+
+    /*Job.tsx*/
+    .jobItem {
+        @apply container flex flex-row items-center justify-between px-6 py-4 gap-x-8 w-full h-[164px] bg-white rounded-lg shadow-item-shadow;
+    }
+
+    .jobImage {
+        @apply w-[85px] h-[85px];
+    }
+
+    .jobImage > img{
+        @apply w-[85px] h-[85px] rounded-full;
+    }
+}

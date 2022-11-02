@@ -1,9 +1,11 @@
 import {FC} from "react";
+import {Jobs} from "../../components";
 
 const JobsPage: FC = () => {
     return (
         <div>
-            JobsPage
+            <Jobs/>
+            {/*<Pagination/>*/}
         </div>
     );
 };
