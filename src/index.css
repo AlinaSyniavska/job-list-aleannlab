@@ -15,14 +15,39 @@
 
     /*Job.tsx*/
     .jobItem {
-        @apply container flex flex-row items-center justify-between px-6 py-4 gap-x-8 w-full h-[164px] bg-white rounded-lg shadow-item-shadow;
+        @apply container flex flex-row items-center justify-between px-6 py-4 gap-x-7 w-full h-[164px] bg-white rounded-lg shadow-item-shadow;
     }
 
     .jobImage {
-        @apply w-[85px] h-[85px];
+        @apply w-[85px] h-[85px] min-w-fit self-start;
     }
 
-    .jobImage > img{
+    .jobImage > img {
         @apply w-[85px] h-[85px] rounded-full;
+    }
+
+    .jobMainInfo {
+        @apply w-[960px] h-[115px] p-0 flex flex-col items-start gap-y-2;
+    }
+
+    .jobMainInfo_title {
+        @apply w-4/5 p-0 font-bold text-xl tracking-[-0.625px] text-dark;
+    }
+
+    .jobMainInfo_company,
+    .jobMainInfo_address {
+        @apply font-normal text-base tracking-[0.23619px] text-secondary;
+    }
+
+    .jobMainInfo_address > span {
+        @apply ml-3;
+    }
+
+    .jobServiceInfo {
+        @apply h-full  flex flex-col justify-between items-end;
+    }
+
+    .jobServiceInfo_createAt > p {
+        @apply p-0 m-0 text-end;
     }
 }

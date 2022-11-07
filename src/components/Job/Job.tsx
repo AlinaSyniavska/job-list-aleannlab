@@ -3,8 +3,10 @@ import {FC} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
     faLocationDot,
-    faBookmark,
 } from "@fortawesome/free-solid-svg-icons";
+import {
+    faBookmark,
+} from "@fortawesome/free-regular-svg-icons";
 
 import {IJob, IRating} from "../../interfaces";
 import {helper} from "../../helpers";
@@ -44,9 +46,13 @@ const Job: FC<IProps> = ({job}) => {
                 </div>
 
                 <div className={"jobServiceInfo"}>
-                    <FontAwesomeIcon icon={faBookmark}/>
-                    <p className={"jobServiceInfo_createAt"}>Posted {helper.getDiffDate(createdAt as any)} days ago</p>
-                    <p className={"jobServiceInfo_createAt"}>{new Date(createdAt).toLocaleDateString('en-GB')}</p>
+                    <FontAwesomeIcon icon={faBookmark} style={{fontSize: '20px'}}/>
+                    <div className={"jobServiceInfo_createAt"}>
+                        <p>Posted {helper.getDiffDate(createdAt as any)} days
+                            ago</p>
+                        <p>{new Date(createdAt).toLocaleDateString('en-GB')}</p>
+                    </div>
+
                 </div>
 
             </div>
