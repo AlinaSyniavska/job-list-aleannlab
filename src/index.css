@@ -50,4 +50,14 @@
     .jobServiceInfo_createAt > p {
         @apply p-0 m-0 text-end;
     }
+
+    /*Pagination*/
+    .wrap > div.pagination {
+        @apply bg-white rounded-xl mt-12 mb-16 text-dark font-bold;
+    }
+
+    .wrap > div.pagination > div > div > div > button {
+        @apply text-dark font-bold;
+    }
+
 }

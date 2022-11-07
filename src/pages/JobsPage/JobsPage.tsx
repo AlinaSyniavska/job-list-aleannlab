@@ -1,11 +1,13 @@
 import {FC} from "react";
-import {Jobs} from "../../components";
+import {Jobs, PaginationComp} from "../../components";
 
 const JobsPage: FC = () => {
     return (
-        <div>
+        <div className={"wrap"}>
             <Jobs/>
-            {/*<Pagination/>*/}
+            <div className={"pagination"}>
+                <PaginationComp/>
+            </div>
         </div>
     );
 };
