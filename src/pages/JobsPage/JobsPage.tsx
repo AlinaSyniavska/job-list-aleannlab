@@ -7,7 +7,7 @@ const JobsPage: FC = () => {
 
     return (
         <div className={"wrap"}>
-            <Jobs activePage={activePage}/>
+            <Jobs activePage={activePage} setActivePage={setActivePage}/>
             <div className={"pagination"}>
                 <PaginationComp activePage={activePage} setActivePage={setActivePage}/>
             </div>

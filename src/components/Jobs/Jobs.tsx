@@ -7,9 +7,10 @@ import {useLocation, useSearchParams} from "react-router-dom";
 
 interface IProps {
     activePage: number,
+    setActivePage: any,
 }
 
-const Jobs: FC<IProps> = ({activePage}) => {
+const Jobs: FC<IProps> = ({activePage, setActivePage}) => {
     const [jobs, setJobs] = useState<IJob[]>([]);
     const {state, pathname} = useLocation();
 
@@ -25,9 +26,11 @@ const Jobs: FC<IProps> = ({activePage}) => {
 
     useEffect(() => {
         jobService.getAll().then(({data}) => setJobs(data))
-        console.log('+++++++++++++++++++++')
-    }, [query, pathname, state])
+    }, [query, pathname])
 
+    useEffect(() => {
+        setActivePage(Number(query.get('page') || '1'));
+    }, [state])
 
     return (
         <div className={"wrap"}>
