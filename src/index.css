@@ -15,7 +15,7 @@
 
     /*Job.tsx*/
     .jobItem {
-        @apply container flex flex-row items-center justify-between px-6 py-4 gap-x-7 w-full h-[164px] bg-white rounded-lg shadow-item-shadow;
+        @apply container flex flex-row items-center px-6 py-4 gap-x-7 w-full h-[164px] bg-white rounded-lg shadow-item-shadow;
     }
 
     .jobImage {
@@ -26,8 +26,17 @@
         @apply w-[85px] h-[85px] rounded-full;
     }
 
+    .jobInfoContainer {
+        @apply flex flex-row items-center gap-x-7 h-full;
+    }
+
+
+
+
     .jobMainInfo {
-        @apply w-[960px] h-[115px] p-0 flex flex-col items-start gap-y-2;
+        @apply  w-[800px] p-0 flex flex-col items-start gap-y-2 order-1
+        md:order-2 md:bg-rose-600
+        border-solid border-2 border-indigo-600;
     }
 
     .jobMainInfo_title {
@@ -43,8 +52,25 @@
         @apply ml-3;
     }
 
+
+
+    .jobSecondaryInfo {
+        @apply flex flex-row items-center justify-between gap-x-7 h-full order-2
+            md:order-1 md:bg-rose-600
+        border-solid border-2 border-rose-600;
+    }
+
+
+
+
+
+    .jobRating {
+        @apply border-solid border-2 border-green-600;
+    }
+
     .jobServiceInfo {
-        @apply h-full  flex flex-col justify-between items-end;
+        @apply h-full flex flex-col justify-between items-end
+        border-solid border-2 border-green-600;
     }
 
     .jobServiceInfo_createAt > p {

@@ -32,25 +32,32 @@ const Job: FC<IProps> = ({job}) => {
                     <img src={pictures[0]} alt={name}/>
                 </div>
 
-                <div className={"jobMainInfo"}>
-                    <div className={"jobMainInfo_title"}>{title}</div>
-                    <div className={"jobMainInfo_company"}>{name}</div>
-                    <div className={"jobMainInfo_address"}>
-                        <FontAwesomeIcon icon={faLocationDot}/>
-                        <span>{address}</span>
+                <div className={"jobInfoContainer"}>
+
+                    <div className={"jobMainInfo"}>
+                        <div className={"jobMainInfo_title"}>{title}</div>
+                        <div className={"jobMainInfo_company"}>{name}</div>
+                        <div className={"jobMainInfo_address"}>
+                            <FontAwesomeIcon icon={faLocationDot}/>
+                            <span>{address}</span>
+                        </div>
                     </div>
-                </div>
 
-                <div className={"jobRating"}>
-                    <StarRating ratingProps={rating}/>
-                </div>
+                    <div className={"jobSecondaryInfo"}>
 
-                <div className={"jobServiceInfo"}>
-                    <FontAwesomeIcon icon={faBookmark} style={{fontSize: '20px'}}/>
-                    <div className={"jobServiceInfo_createAt"}>
-                        <p>Posted {helper.getDiffDate(createdAt as any)} days
-                            ago</p>
-                        <p>{new Date(createdAt).toLocaleDateString('en-GB')}</p>
+                        <div className={"jobRating"}>
+                            <StarRating ratingProps={rating}/>
+                        </div>
+
+                        <div className={"jobServiceInfo"}>
+                            <FontAwesomeIcon icon={faBookmark} style={{fontSize: '20px'}}/>
+                            <div className={"jobServiceInfo_createAt"}>
+                                <p>Posted {helper.getDiffDate(createdAt as any)} days
+                                    ago</p>
+                                <p>{new Date(createdAt).toLocaleDateString('en-GB')}</p>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
