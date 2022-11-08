@@ -10,76 +10,77 @@
     }
 
     .jobsContainer {
-        @apply container mt-7 w-[1400px] flex flex-col gap-y-2 font-sans;
+        @apply container mt-7 w-[1400px] flex flex-col gap-y-2 font-sans
+        md:w-[396px];
     }
 
     /*Job.tsx*/
     .jobItem {
-        @apply container flex flex-row items-center px-6 py-4 gap-x-7 w-full h-[164px] bg-white rounded-lg shadow-item-shadow;
+        @apply container flex flex-row items-center px-6 py-4 gap-x-7 w-full h-[164px] bg-white rounded-lg shadow-item-shadow
+        md:h-[206px] md:bg-[#EFF0F5];
     }
 
     .jobImage {
-        @apply w-[85px] h-[85px] min-w-fit self-start;
+        @apply w-[85px] h-[85px] min-w-fit self-start
+        md:w-[66px] md:h-[66px] md:mt-14;
     }
 
     .jobImage > img {
-        @apply w-[85px] h-[85px] rounded-full;
+        @apply w-[85px] h-[85px] rounded-full
+        md:w-[66px] md:h-[66px];
     }
 
     .jobInfoContainer {
-        @apply flex flex-row items-center gap-x-7 h-full;
+        @apply flex flex-row items-center gap-x-7 h-full
+        md:flex-col md:items-start md:justify-start md:gap-y-3.5;
     }
 
-
-
-
     .jobMainInfo {
-        @apply  w-[800px] p-0 flex flex-col items-start gap-y-2 order-1
-        md:order-2 md:bg-rose-600
-        border-solid border-2 border-indigo-600;
+        @apply w-[960px] p-0 flex flex-col items-start gap-y-2 order-1
+        md:order-2 md:w-full md:gap-y-1;
     }
 
     .jobMainInfo_title {
-        @apply w-4/5 p-0 font-bold text-xl tracking-[-0.625px] text-dark;
+        @apply w-4/5 p-0 font-bold text-xl tracking-[-0.625px] text-dark
+        md:w-full md:max-h-[48px] md:font-normal md:text-base
+        md:truncate md:text-ellipsis md:whitespace-normal;
     }
 
     .jobMainInfo_company,
     .jobMainInfo_address {
-        @apply font-normal text-base tracking-[0.23619px] text-secondary;
+        @apply font-normal text-base tracking-[0.23619px] text-secondary
+        md:text-sm;
     }
 
     .jobMainInfo_address > span {
         @apply ml-3;
     }
 
-
-
     .jobSecondaryInfo {
         @apply flex flex-row items-center justify-between gap-x-7 h-full order-2
-            md:order-1 md:bg-rose-600
-        border-solid border-2 border-rose-600;
+        md:order-1 md:gap-0 md:items-start md:h-fit;
     }
 
-
-
-
-
     .jobRating {
-        @apply border-solid border-2 border-green-600;
     }
 
     .jobServiceInfo {
         @apply h-full flex flex-col justify-between items-end
-        border-solid border-2 border-green-600;
+            md:h-fit;
+    }
+
+    .bookmark {
+        @apply md:hidden;
     }
 
     .jobServiceInfo_createAt > p {
-        @apply p-0 m-0 text-end;
+        @apply p-0 m-0 text-end last:hidden;
     }
 
     /*Pagination*/
     .wrap > div.pagination {
-        @apply bg-white rounded-xl mt-12 mb-16 text-dark font-bold;
+        @apply bg-white rounded-xl mt-12 mb-16 text-dark font-bold
+        md:bg-[#F9FAFD];
     }
 
     .wrap > div.pagination > div > div > div > button {

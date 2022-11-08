@@ -50,7 +50,9 @@ const Job: FC<IProps> = ({job}) => {
                         </div>
 
                         <div className={"jobServiceInfo"}>
-                            <FontAwesomeIcon icon={faBookmark} style={{fontSize: '20px'}}/>
+                            <div className={"bookmark"}>
+                                <FontAwesomeIcon icon={faBookmark} style={{fontSize: '20px'}}/>
+                            </div>
                             <div className={"jobServiceInfo_createAt"}>
                                 <p>Posted {helper.getDiffDate(createdAt as any)} days
                                     ago</p>
