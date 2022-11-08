@@ -1,11 +1,10 @@
 import {FC} from "react";
-
-import {JobsPage} from "../../pages";
+import {Outlet} from "react-router-dom";
 
 const MainLayout: FC = () => {
     return (
         <div>
-            <JobsPage/>
+            <Outlet/>
         </div>
     );
 };

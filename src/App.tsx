@@ -6,7 +6,7 @@ import {DetailedJobPage, JobsPage} from "./pages";
 const App = () => {
     return (
         <Routes>
-            <Route path={'/home/'} element={<MainLayout/>}>
+            <Route path={'/'} element={<MainLayout/>}>
                 <Route index element={<Navigate to={'jobs'}/>}/>
                 <Route path={'jobs'} element={<JobsPage/>}/>
                 <Route path={'jobs/:id'} element={<DetailedJobPage/>}/>
