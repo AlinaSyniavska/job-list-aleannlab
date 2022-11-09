@@ -11,6 +11,7 @@ import {
 import {IJob, IRating} from "../../interfaces";
 import {helper} from "../../helpers";
 import {StarRating} from "../StarRating/StarRating";
+import {Link} from "react-router-dom";
 
 interface IProps {
     job: IJob,
@@ -35,7 +36,9 @@ const Job: FC<IProps> = ({job}) => {
                 <div className={"jobInfoContainer"}>
 
                     <div className={"jobMainInfo"}>
-                        <div className={"jobMainInfo_title"}>{title}</div>
+                        <Link to={':id'}>
+                            <div className={"jobMainInfo_title"}>{title}</div>
+                        </Link>
                         <div className={"jobMainInfo_company"}>{name}</div>
                         <div className={"jobMainInfo_address"}>
                             <FontAwesomeIcon icon={faLocationDot}/>

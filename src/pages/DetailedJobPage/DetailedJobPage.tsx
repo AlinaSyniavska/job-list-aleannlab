@@ -1,9 +1,11 @@
 import {FC} from "react";
 
+import {JobDetails} from "../../components";
+
 const DetailedJobPage: FC = () => {
     return (
         <div>
-            DetailedJobPage
+            <JobDetails/>
         </div>
     );
 };
