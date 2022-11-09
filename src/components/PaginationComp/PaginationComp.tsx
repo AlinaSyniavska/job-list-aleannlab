@@ -1,5 +1,5 @@
 import {FC, useState} from "react";
-import { Pagination } from "rsuite";
+import {Pagination} from "rsuite";
 import {TypeAttributes} from "rsuite/esm/@types/common";
 
 interface IProps {
@@ -8,7 +8,6 @@ interface IProps {
 }
 
 const PaginationComp: FC<IProps> = ({activePage, setActivePage}) => {
-
     const [prev, setPrev] = useState<boolean>(true);
     const [next, setNext] = useState<boolean>(true);
     const [ellipsis, setEllipsis] = useState<boolean>(true);

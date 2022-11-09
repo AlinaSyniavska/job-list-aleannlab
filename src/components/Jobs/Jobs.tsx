@@ -25,7 +25,7 @@ const Jobs: FC<IProps> = ({activePage, setActivePage}) => {
     }, [activePage]);
 
     useEffect(() => {
-        jobService.getAll().then(({data}) => setJobs(data))
+        jobService.getAll().then(({data}) => setJobs(data));
     }, [query, pathname])
 
     useEffect(() => {
