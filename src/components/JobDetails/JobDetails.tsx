@@ -1,13 +1,13 @@
 import {FC} from "react";
 
 import {IJob} from "../../interfaces";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBookmark} from "@fortawesome/free-regular-svg-icons";
 import {faShareNodes} from "@fortawesome/free-solid-svg-icons";
 import {Button} from "../Button/Button";
 import {helper} from "../../helpers";
 import {EmploymentType} from "../EmploymentType/EmploymentType";
 import {Benefits} from "../Benefits/Benefits";
+import {Bookmark} from "../Bookmark/Bookmark";
 
 interface IProps {
     jobDetails: IJob,
@@ -25,14 +25,8 @@ const JobDetails: FC<IProps> = ({jobDetails}) => {
                     <div className={"jobDetailsHeader"}>
                         <p className={"jobDetailsTitle"}>Job Details</p>
                         <div className={"jobDetailsBookmark"}>
-                            <div className={"bookmark"}>
-                                <FontAwesomeIcon icon={faBookmark} style={{fontSize: '20px'}}/>
-                                <span>Save to my list</span>
-                            </div>
-                            <div className={"bookmark"}>
-                                <FontAwesomeIcon icon={faShareNodes} style={{fontSize: '20px'}}/>
-                                <span>Share</span>
-                            </div>
+                            <Bookmark icon={faBookmark} fontSize={'20px'} children={'Save to my list'}/>
+                            <Bookmark icon={faShareNodes} fontSize={'20px'} children={'Share'}/>
                         </div>
                     </div>
 

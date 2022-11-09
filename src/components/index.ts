@@ -1,3 +1,4 @@
+export * from './Bookmark/Bookmark';
 export * from './Button/Button';
 export * from './Benefits/Benefits';
 export * from './EmploymentType/EmploymentType';
