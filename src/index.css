@@ -87,4 +87,14 @@
         @apply text-dark font-bold;
     }
 
+    /*JobDetails*/
+    .singleJobContainer {
+        @apply container mx-auto w-[1400px] flex justify-between flex-row
+    }
+
+    .jobDetailsContainer {
+        @apply w-[774px]
+        border-solid border-2 border-indigo-600;
+    }
+
 }

@@ -18,7 +18,7 @@ interface IProps {
 }
 
 const Job: FC<IProps> = ({job}) => {
-    const {name, pictures, title, address, createdAt} = job;
+    const {name, pictures, title, address, createdAt, id} = job;
 
     const rating: IRating = {
         defaultValue: helper.getRandomIntInclusive(1, 5),
@@ -36,7 +36,7 @@ const Job: FC<IProps> = ({job}) => {
                 <div className={"jobInfoContainer"}>
 
                     <div className={"jobMainInfo"}>
-                        <Link to={':id'}>
+                        <Link to={`${id}`} state={job}>
                             <div className={"jobMainInfo_title"}>{title}</div>
                         </Link>
                         <div className={"jobMainInfo_company"}>{name}</div>
