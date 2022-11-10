@@ -14,7 +14,6 @@ interface IProps {
 }
 
 const JobDetails: FC<IProps> = ({jobDetails}) => {
-
     const {title, createdAt, salary, description, benefits, employment_type, pictures, name} = jobDetails;
 
     return (
@@ -32,28 +31,33 @@ const JobDetails: FC<IProps> = ({jobDetails}) => {
 
                     <div className={"btnApply"}>
                         <Button to={'/'} children={'APPLY NOW'}
-                               className={"py-4 px-7 bg-[#384564] text-white font-bold rounded-lg tracking-wide"}/>
+                                className={"py-4 px-7 bg-[#384564] text-white font-bold rounded-lg tracking-wide"}/>
                     </div>
 
                     <div className={"jobDetailsPart1"}>
-                        <div>
-                            <div className={"jobDetailsTitle"}>{title}</div>
-                            <div className={"jobDetailsCreatedAt"}>Posted {helper.getDiffDate(createdAt as any)} days
-                                ago</div>
+                        <div className={"part1"}>
+                            <div className={"jobDetailsName"}>{title}</div>
+                            <div
+                                className={"jobDetailsText jobDetailsCreatedAt"}>Posted {helper.getDiffDate(createdAt as any)} days
+                                ago
+                            </div>
                         </div>
                         <div className={"jobDetailsSalary"}>
-                            {helper.formatNumbersAsCurrency(salary)}
-                            <p>Brutto, per year</p>
+                            <p className={"jobDetailsBoldText"}>{helper.formatNumbersAsCurrency(salary)}</p>
+                            <p className={"jobDetailsText"}>Brutto, per year</p>
                         </div>
                     </div>
 
                     <div className={"jobDetailsPart2"}>
-                        <div className={"jobDetailsDescription jobDetailsText"}>{description}</div>
+                        <div className={"jobDetailsText"}>{description}</div>
                         <div>
-                            <p>Compensation & Benefits:</p>
-                            {
-                                benefits.map((item, index) => <li className={"jobDetailsText"} key={index}>{item}</li>)
-                            }
+                            <p className={"jobDetailsBoldText"}>Compensation & Benefits:</p>
+                            <ul>
+                                {
+                                    benefits.map((item, index) => <li className={"jobDetailsText"}
+                                                                      key={index}>{item}</li>)
+                                }
+                            </ul>
                         </div>
                     </div>
 
@@ -72,13 +76,14 @@ const JobDetails: FC<IProps> = ({jobDetails}) => {
                         <p className={"jobDetailsTitle"}>Attached images</p>
                         <div className={"jobDetailsImg"}>
                             {
-                                pictures.map((item, index) => <img key={index} src={`${item}`} alt={`${name} photo${index+1}`}/>)
+                                pictures.map((item, index) => <img key={index} src={`${item}`}
+                                                                   alt={`${name} photo${index + 1}`}/>)
                             }
                         </div>
                     </div>
 
                     <Button to={'/'} children={'< RETURN TO JOB BOARD'}
-                            className={"py-4 px-7 bg-[#E4E5EA] text-[#384564] font-bold rounded-lg tracking-wide"}/>
+                            className={"py-4 px-7 bg-[#E4E5EA] text-[#384564] font-bold rounded-lg tracking-wide mt-24"}/>
 
                 </div>
 

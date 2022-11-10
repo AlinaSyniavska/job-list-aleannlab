@@ -6,11 +6,13 @@ interface IProps {
 
 const EmploymentType: FC<IProps> = ({employment}) => {
     return (
-        <div>
+        <div className={"addInfo"}>
             <p className={"jobDetailsText"}>Employment type</p>
-            {
-                employment.map((item, index) => <div className={"jobDetailsEmployment"} key={index}>{item}</div>)
-            }
+            <div>
+                {
+                    employment.map((item, index) => <div className={"jobDetailsEmployment"} key={index}>{item}</div>)
+                }
+            </div>
         </div>
     );
 };
