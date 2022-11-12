@@ -31,14 +31,14 @@ const defaultOptions = {
 const Map: FC<IProps> = ({location}) => {
     const {lat, long} = location;
 
+    // const center = {
+    //     lat: lat,
+    //     lng: long
+    // };
     const center = {
-        lat: lat,
-        lng: long
-    };
-/*    const center = {
         lat: 47.374280,
         lng: 8.540880
-    };*/
+    };
 
     const mapRef = useRef(undefined);
 
@@ -51,7 +51,7 @@ const Map: FC<IProps> = ({location}) => {
     }, [])
 
     return (
-        <div>
+        <div className={"map"}>
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}

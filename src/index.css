@@ -190,7 +190,8 @@
         @apply w-[200px] rounded-lg object-cover object-center;
     }
 
-    .map {
+    /*Map*/
+    .jobMapContainer {
         @apply rounded-lg;
     }
 
