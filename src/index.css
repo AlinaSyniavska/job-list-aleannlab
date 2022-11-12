@@ -89,12 +89,11 @@
 
     /*JobDetails*/
     .singleJobContainer {
-        @apply container mx-auto w-[1400px] flex justify-between flex-row text-dark;
+        @apply container mx-auto w-[1400px] mt-14 flex justify-start gap-x-20 text-dark;
     }
 
     .jobDetailsContainer {
-        @apply w-[774px] flex flex-col p-4
-        border-solid border-2 border-indigo-600;
+        @apply w-[774px] flex flex-col p-4;
     }
 
     .jobDetailsHeader {
@@ -102,7 +101,7 @@
     }
 
     .jobDetailsTitle {
-        @apply font-bold text-[28px] pb-2 border-solid border-b border-secondary;
+        @apply font-bold text-[28px] p-0 m-0 pb-2 border-solid border-b border-secondary;
     }
 
     .jobDetailsBookmark {
@@ -191,5 +190,8 @@
         @apply w-[200px] rounded-lg object-cover object-center;
     }
 
+    .map {
+        @apply rounded-lg;
+    }
 
 }

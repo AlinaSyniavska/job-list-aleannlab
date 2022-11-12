@@ -1,4 +1,5 @@
 import {FC} from "react";
+import {useJsApiLoader} from "@react-google-maps/api";
 
 import {IJob} from "../../interfaces";
 import {faBookmark} from "@fortawesome/free-regular-svg-icons";
@@ -8,13 +9,20 @@ import {helper} from "../../helpers";
 import {EmploymentType} from "../EmploymentType/EmploymentType";
 import {Benefits} from "../Benefits/Benefits";
 import {Bookmark} from "../Bookmark/Bookmark";
+import {Map} from "../Map/Map";
+import {API_KEY} from "../../constants";
 
 interface IProps {
     jobDetails: IJob,
 }
 
 const JobDetails: FC<IProps> = ({jobDetails}) => {
-    const {title, createdAt, salary, description, benefits, employment_type, pictures, name} = jobDetails;
+    const {title, createdAt, salary, description, benefits, employment_type, pictures, name, location} = jobDetails;
+
+    const { isLoaded } = useJsApiLoader({
+        id: 'google-map-script',
+        googleMapsApiKey: API_KEY as string,
+    })
 
     return (
         <div>
@@ -76,7 +84,7 @@ const JobDetails: FC<IProps> = ({jobDetails}) => {
                         <p className={"jobDetailsTitle"}>Attached images</p>
                         <div className={"jobDetailsImg"}>
                             {
-                                pictures.map((item, index) => <img key={index} src={`${item}`}
+                                pictures.map((item, index) => <img key={index} src={`${item}?random=${Math.floor(Math.random() * 100) + 1}`}
                                                                    alt={`${name} photo${index + 1}`}/>)
                             }
                         </div>
@@ -88,7 +96,9 @@ const JobDetails: FC<IProps> = ({jobDetails}) => {
                 </div>
 
                 <div className={"jobMapContainer"}>
-
+                    {
+                        isLoaded ? <Map location={location}/> : <h2>Loading...</h2>
+                    }
                 </div>
             </div>
         </div>

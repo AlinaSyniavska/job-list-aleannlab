@@ -30,7 +30,7 @@ const Job: FC<IProps> = ({job}) => {
         <div>
             <div className={"jobItem"}>
                 <div className={"jobImage"}>
-                    <img src={pictures[0]} alt={name}/>
+                    <img src={`${pictures[0]}?random=${Math.floor(Math.random() * 100) + 1}`} alt={name}/>
                 </div>
 
                 <div className={"jobInfoContainer"}>
