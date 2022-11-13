@@ -3,7 +3,7 @@ import {useJsApiLoader} from "@react-google-maps/api";
 
 import {IFeatureProperties, IJob} from "../../interfaces";
 import {faBookmark} from "@fortawesome/free-regular-svg-icons";
-import {faLocationDot, faShareNodes} from "@fortawesome/free-solid-svg-icons";
+import {faShareNodes} from "@fortawesome/free-solid-svg-icons";
 import {Button} from "../Button/Button";
 import {helper} from "../../helpers";
 import {EmploymentType} from "../EmploymentType/EmploymentType";
@@ -12,7 +12,6 @@ import {Bookmark} from "../Bookmark/Bookmark";
 import {Map} from "../Map/Map";
 import {API_KEY} from "../../constants";
 import {geocodingService} from "../../services";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 interface IProps {
     jobDetails: IJob,
@@ -28,14 +27,8 @@ const JobDetails: FC<IProps> = ({jobDetails}) => {
         googleMapsApiKey: API_KEY as string,
     })
 
-    const center = {
-        lat: 47.374280,
-        long: 8.540880
-    };
-
     useEffect(() => {
-        // geocodingService.getAddress(location.lat, location.long).then(({data}) => setAddress(data.features[0].properties));
-        geocodingService.getAddress(center.lat, center.long).then(({data}) => setAddress(data.features[0].properties));
+        geocodingService.getAddress(location.lat, location.long).then(({data}) => setAddress(data.features[0].properties));
     }, [])
 
     return (
@@ -111,19 +104,14 @@ const JobDetails: FC<IProps> = ({jobDetails}) => {
 
                 <div className={"jobMapContainer"}>
                     {
-                        isLoaded ? <Map location={location}/> : <h2>Loading...</h2>
+                        isLoaded ? <Map
+                            location={location}
+                            name={name}
+                            address={address.formatted as string}
+                            phone={phone}
+                            email={email}
+                        /> : <h2>Loading...</h2>
                     }
-                    <div className={"mapDescription"}>
-                        <p>Department name: </p>
-                        <p>{name}</p>
-                        <p>
-                            <FontAwesomeIcon icon={faLocationDot}/>
-                            <span>{address.formatted}</span>
-                        </p>
-                        <p>{phone}</p>
-                        <p>{email}</p>
-                    </div>
-
                 </div>
             </div>
         </div>

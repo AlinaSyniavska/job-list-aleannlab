@@ -74,7 +74,8 @@
     }
 
     .jobServiceInfo_createAt > p {
-        @apply p-0 m-0 text-end last:hidden;
+        /*@apply p-0 m-0 text-end last:hidden;*/
+        @apply p-0 m-0 text-end;
     }
 
     /*Pagination*/
@@ -192,7 +193,23 @@
 
     /*Map*/
     .jobMapContainer {
-        @apply rounded-lg;
+        @apply relative w-[402px];
+    }
+
+    .mapDescription {
+        /*@apply z-10 w-full h-1/2 px-16 absolute inset-x-0 text-[#E7EAF0] flex flex-col justify-center gap-y-4 bg-[#2a3047];*/
+        @apply z-10 w-full h-[220px] px-16  text-[#E7EAF0] flex flex-col justify-center gap-y-4 bg-[#2a3047];
+    }
+
+    .mapTitle {
+        @apply text-xl leading-6 font-bold p-0 m-0;
+    }
+
+    .mapBaseInfo {
+        @apply text-lg leading-6 p-0 m-0;
+    }
+    .mapBaseInfo > span {
+        @apply ml-3;
     }
 
 }
