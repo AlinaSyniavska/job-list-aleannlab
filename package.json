@@ -2,6 +2,7 @@
   "name": "job_list_aleannlab",
   "version": "0.1.0",
   "private": true,
+  "stack": "heroku-20",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
