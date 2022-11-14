@@ -81,8 +81,6 @@ const Map: FC<IProps> = ({location, name, email, phone, address}) => {
                 options={defaultOptions}
             >
                 <Marker position={center}/>
-
-
             </GoogleMap>
         </div>
     );
